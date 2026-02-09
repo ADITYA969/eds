@@ -1,5 +1,5 @@
 .blogs-wrapper {
-    background-color: #ffffff;
+    background-color: white;
     padding: 60px 0!important;
     max-width: unset!important;
 }
@@ -13,7 +13,7 @@
     flex: 3;
 }
 .blogs-title {
-    color: #000000;
+    color: #111010;
     font-style: italic;
     font-family: 'PTSerif-Caption';
     font-size: 2.5rem;
@@ -21,7 +21,7 @@
 }
 .blog-item {
     margin-bottom: 2.5rem;
-    color: #000000;
+    color: #111010;
     text-align: right;
 }
 .blog-item:last-child {
@@ -49,7 +49,7 @@
     font-size: 1.25rem;
 }
 .blog-details span {
-    color: #4da6ff;
+    color: #111010;
 }
 .blog-card {
     text-align: center;

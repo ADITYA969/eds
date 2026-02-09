@@ -1,35 +1,57 @@
 export default function decorate(block) {
-  const blogsWrapper = document.createElement('div');
-  blogsWrapper.classList.add('container');
-  const blogsList = document.createElement('div');
-  blogsList.classList.add('blogs-list');
+  if (!block) {
+    return;
+  }
 
-  const blogListItems = block.querySelectorAll('.blogs > div');
+  var blogsWrapper = document.createElement('div');
+  blogsWrapper.className = 'container';
 
-  blogListItems.forEach((item) => {
-    const blogItem = document.createElement('div');
-    blogItem.classList.add('blog-item');
+  var blogsList = document.createElement('div');
+  blogsList.className = 'blogs-list';
 
-    const blogTitle = item.querySelector('h3').textContent.trim();
-    const details = item.querySelectorAll('p');
-    const date = details[0].textContent.trim();
-    const blogDescription = details[1].textContent.trim();
+  var blogListItems = block.querySelectorAll('.blogs > div');
 
-    blogItem.innerHTML = `
-      <div class="blog-details">
-        <h3>${blogTitle}</h3>
-        <span>${date}</span>
-      </div>
-      <p>${blogDescription}</p>
-    `;
+  for (var i = 0; i < blogListItems.length; i++) {
+    var item = blogListItems[i];
 
-    blogsList.append(blogItem);
-  });
+    var blogItem = document.createElement('div');
+    blogItem.className = 'blog-item';
 
-  blogsWrapper.append(blogsList);
+    var titleEl = item.querySelector('h3');
+    var titleText = titleEl ? titleEl.textContent.replace(/^\s+|\s+$/g, '') : '';
+
+    var paragraphs = item.querySelectorAll('p');
+    var dateText = paragraphs.length > 0
+      ? paragraphs[0].textContent.replace(/^\s+|\s+$/g, '')
+      : '';
+
+    var descText = paragraphs.length > 1
+      ? paragraphs[1].textContent.replace(/^\s+|\s+$/g, '')
+      : '';
+
+    var detailsDiv = document.createElement('div');
+    detailsDiv.className = 'blog-details';
+
+    var h3 = document.createElement('h3');
+    h3.appendChild(document.createTextNode(titleText));
+
+    var span = document.createElement('span');
+    span.appendChild(document.createTextNode(dateText));
+
+    detailsDiv.appendChild(h3);
+    detailsDiv.appendChild(span);
+
+    var descP = document.createElement('p');
+    descP.appendChild(document.createTextNode(descText));
+
+    blogItem.appendChild(detailsDiv);
+    blogItem.appendChild(descP);
+
+    blogsList.appendChild(blogItem);
+  }
+
+  blogsWrapper.appendChild(blogsList);
 
   block.innerHTML = '';
-  block.append(blogsWrapper);
-
-  console.log(block);
+  block.appendChild(blogsWrapper);
 }

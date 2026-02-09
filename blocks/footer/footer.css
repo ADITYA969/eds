@@ -5,7 +5,7 @@
 	position: relative;
 }
 .footer {
-    background-color: #65b0e3;
+    background-color: #6996e4;
     padding: 30px 0 50px 0;
 }
 .footer > .container {
@@ -23,16 +23,16 @@
 }
 .footer-item a {
     display: block;
-    color: #455b6c;
+    color: #acacac;
     padding: 15px 0;
     text-decoration: none;
     border-bottom: 1px solid rgba(80, 105, 124, 0.25);
 }
 .newsletter p {
-    color: #5c788d;
+    color: #747575;
 }
 .newsletter .copyright {
-    color: #164a75;
+    color: #6c6e6f;
 }
 .newsletter input {
     height: 35px;
@@ -47,7 +47,7 @@
     border-radius: 0.5rem;
     padding: 0 15px;
     cursor: pointer;
-    background-color: #162a3b;
+    background-color: #2168a4;
     margin-left: 1rem;
     font-family: PTSerif-Caption;
 }
