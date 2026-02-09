@@ -1,5 +1,5 @@
 .blogs-wrapper {
-    background-color: #103f5c;
+    background-color: #ffffff;
     padding: 60px 0!important;
     max-width: unset!important;
 }
@@ -13,7 +13,7 @@
     flex: 3;
 }
 .blogs-title {
-    color: #ffffff;
+    color: #000000;
     font-style: italic;
     font-family: 'PTSerif-Caption';
     font-size: 2.5rem;
@@ -21,7 +21,7 @@
 }
 .blog-item {
     margin-bottom: 2.5rem;
-    color: #ffffff;
+    color: #000000;
     text-align: right;
 }
 .blog-item:last-child {
